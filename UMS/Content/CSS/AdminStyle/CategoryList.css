@@ -1,0 +1,30 @@
+﻿div.add-category{
+    box-shadow: 1px 3px 12px 5px rgba(136, 136, 136, 0.6);
+    background-color:white;
+    border-radius:1%;
+    padding:40px;
+    margin-top:15%;
+    position: fixed;
+    width: 25%;
+}
+div.view-category{
+    box-shadow: 1px 3px 12px 5px rgba(136, 136, 136, 0.6);;
+    background-color:white;
+    border-radius:1%;
+    padding:10px;
+    margin-top: 10%;
+    margin-left: 15%;
+    width: 80%;
+}
+hr {
+    background-color: white;
+    color:white;
+}
+form 
+{
+    text-align:center;
+}
+tr
+{
+    height: 50px;
+}

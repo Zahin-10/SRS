@@ -1,0 +1,34 @@
+﻿body {
+    font-family: 'Nova Mono';
+    padding: 0 !important;
+}
+.admin_left 
+{
+    padding:0;
+}
+.left-content
+{
+    background-color: #ffd54f;
+    position: fixed;
+    height:100%;
+    width:23%;
+  
+}
+.name {
+    font-family: 'Kristi', cursive;
+    font-size:700%;
+    padding-top:15vw;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+}
+a img {
+    width: 20%;
+    border-radius: 50%;
+    border: 2px solid #00b0ff;
+}
+a img:hover {
+    border: 2px solid #e9342b;
+}

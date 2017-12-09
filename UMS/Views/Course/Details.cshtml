@@ -1,0 +1,21 @@
+﻿@model UMS.Entity.Course
+
+@{
+    ViewBag.Title = "Course | Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Edit", "Edit", new { id = Model.Id })|
+@Html.ActionLink("Back to List", "Index")
+<br />
+<br />
+<fieldset>
+    <legend>Student</legend>
+    @Html.DisplayNameFor(model => model.Name)
+    @Html.Raw(":")
+    @Html.DisplayFor(model => model.Name)
+    <br/>
+    @Html.DisplayNameFor(model => model.Credit)
+    @Html.Raw(":")
+    @Html.DisplayFor(model => model.Credit)
+</fieldset>

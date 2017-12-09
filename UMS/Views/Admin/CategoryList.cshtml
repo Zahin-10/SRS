@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SRS.Entity.Category>
+@{
+    ViewBag.Title = "Category List";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="col-md-9 admin_right">
+    <div class=row>
+        <div class="col-md-3">
+            <div class="add-category">
+                <h3 class="text-center">Add Food Category</h3>
+                <form>
+
+                    Category Name:
+                    <br>
+                    <input type="text">
+                    <br>
+                    <br>
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="view-category text-center">
+                <h3>Category List</h3>
+                <hr>
+                <table width="100%">
+                    <tr>
+                        <th>
+                            Category name
+                            <hr>
+                        </th>
+                        <th>
+                            Edit
+                            <hr>
+                        </th>
+                        <th>
+                            Delete
+                            <hr>
+                        </th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id })|
+                                @Html.ActionLink("Details", "Details", new { id = item.Id })|
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

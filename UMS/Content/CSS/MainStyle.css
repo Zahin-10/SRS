@@ -1,0 +1,346 @@
+﻿body{
+    background-color:#f5f5f5;
+    font-family: 'Lato','Roboto', sans-serif !important;
+}
+.my-nav {
+    background-color: #ffffff;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
+    color: #e9342b !important;
+}
+.btn-pos {
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.button-style {
+    color: #e9342b;
+    border: 1px solid #e9342b;
+    border-radius: 2%; 
+    
+}
+button.btn.btn-warning {
+    color: #e9342b;
+    background-color: rgba(240, 173, 78, 0);
+    border-color: rgb(234, 44, 44);
+}
+button.btn.btn-warning:active{
+    color: #fff;
+    background-color: #e9342b;
+    border-color: #e9342b;
+}
+button.btn.btn-warning:focus{
+    box-shadow:none;
+    outline:none;
+}
+button.btn.btn-warning:hover{
+    color: #fff;
+    background-color: #e9342b;
+    border-color: #e9342b;
+    margin-top: 9%;
+}
+#signup.btn.btn-success {
+    color: #fff;
+    background-color: #464a4c;
+    border-color: #464a4c;
+}
+#signup.btn.btn-success:hover{
+    color: #fff;
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+#signup {
+    width: 100%;
+    padding:15px;
+}
+#member {
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 15px;
+    padding: 18px;
+    width: 90%;
+    background-color: #e9342b;
+}
+#member a{
+    color:#464a4c;
+}
+
+#member a:hover{
+    color:white;
+    text-decoration: none;
+}
+.modal-content {
+    width: 67%;
+}
+
+input, select, textarea {
+    max-width: 360px;
+}
+
+#greetings {
+    color: white;
+    border-radius: 3px;
+    padding: 6px;
+    text-align: center;
+    background-color: #e9342b;
+}
+.tile{
+    overflow:hidden;
+    position:relative;
+    bottom:0px;
+}
+.tile img{
+    z-index:2;
+    object-fit: cover; /* Do not scale the image */
+    object-position: center;
+    transform: scale(1.1);
+    -webkit-filter: brightness(100%);
+  
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.tile img:hover {
+    -webkit-filter: brightness(70%);
+    -moz-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    bottom:0px;
+    left:3px;
+    color:white;
+    pointer-events:none;
+    z-index:2;
+    padding-left:12px;
+}
+.overlay-content{
+    position:absolute;
+    bottom:10px;
+    left:20px;
+    height:25%;  
+}
+.modal {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    margin-left:7.9%;
+}
+
+.modal-title {
+    margin: 3% 0 -3% 4%;
+    line-height: 1.42857143;
+}
+.modal .close {
+    color: #e9342b;
+}
+
+.navbar-right {
+    float: right !important;
+    margin-right: 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel {
+    border: none;
+    border-radius:5px;
+    box-shadow: 0px 1px 20px 12px rgba(21, 20, 20, 0.2);
+    font-family: 'Roboto', sans-serif;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.panel-heading {
+    background-color:#191919;
+    color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.panel-footer
+{
+    background-color:white;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#count{
+    float: right;
+    background-color: white;
+    color: #e9342b;
+    border-radius: 2px;
+    text-align: center;
+    padding: 2px 5px 1px 5px;
+    margin-top: 8px;
+}
+.count-input {
+    width: 100%;
+    max-width: 165px;
+    margin: 10px 0;
+    position: relative;
+    float: none;
+    margin: 0 auto;
+    top: 50px;
+}
+.count-input a {
+    color:gray;
+}
+a {
+    text-decoration: none !important;
+    color: #464a4c;
+}
+a#inc-btn:hover {
+    color:#2bbfe9 !important;
+}
+a#dec-btn:hover {
+    color:#e9342b !important;
+}
+
+.count-input input {
+    width: 100%;
+    height: 36.92307692px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    background: none;
+    text-align: center;
+}
+.count-input input:focus {
+    outline: none;
+}
+.count-input .incr-btn {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 30px;
+    top: 50%;
+    right: 0;
+    margin-top: -15px;
+    text-decoration:none;
+}
+.count-input .incr-btn:first-child {
+    right: auto;
+    left: 0;
+    top: 50%;
+}
+.count-input.count-input-sm {
+    max-width: 125px;
+}
+.count-input.count-input-sm input {
+    height: 36px;
+}
+.count-input.count-input-lg {
+    max-width: 200px;
+}
+.count-input.count-input-lg input {
+    height: 70px;
+    border-radius: 3px;
+}
+.amount 
+{
+    position: relative;
+    float: none;
+    margin: 0 auto;
+    top: 60px;
+}
+#addFood
+{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    color:black;
+}
+#addFood:hover
+{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #e9342b;
+    color: #e9342b;
+}
+#addFood:focus{
+    box-shadow:none;
+    outline:none;
+}
+#pay
+{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #e9342b;
+    border-radius: 4px;
+    padding: 10px;
+    color: #e9342b;
+    width:102.719px;
+    position: relative;
+    left: 56.5%;
+}
+#pay:hover
+{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #2bbfe9;
+    color: #2bbfe9;
+}
+#pay:focus{
+    box-shadow:none;
+    outline:none;
+}
+#cart-cancel
+{
+    background-color: #e9342b;
+    border: 1px solid #e9342b;
+    border-radius: 4px;
+    padding: 10px;
+    color: #fff;
+    width:102.719px;
+    position: absolute;
+    right: 2%;
+}
+#cart-cancel:hover
+{
+    background-color: #191919;
+    border: 1px solid #e9342b;
+    color: #fff;
+}
+#pay:focus{
+    box-shadow:none;
+    outline:none;
+}
+#totalAmount {
+    position: absolute; 
+    right: 22.2%;
+}

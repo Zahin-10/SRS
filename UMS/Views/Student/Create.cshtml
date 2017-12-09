@@ -1,0 +1,33 @@
+﻿@model UMS.Entity.Student
+
+@{
+    ViewBag.Title = "Student | Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Back to List", "Index")
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+
+    <fieldset>
+        <legend>Student</legend>
+        @Html.LabelFor(model => model.Id)<br />
+        @Html.EditorFor(model => model.Id)
+        <br/>
+        @Html.LabelFor(model => model.Name)<br />
+        @Html.EditorFor(model => model.Name)
+        <br />
+        @Html.LabelFor(model => model.Cgpa)<br />
+        @Html.EditorFor(model => model.Cgpa)
+        <br />
+        @Html.LabelFor(model => model.Department)<br />
+        @Html.DropDownList("departmentId", (IEnumerable<SelectListItem>)ViewBag.departmentSelectList)
+
+        <hr/>
+        <input type="submit" value="Create" />
+    </fieldset>    
+}
+<br />
+@ViewBag.Message

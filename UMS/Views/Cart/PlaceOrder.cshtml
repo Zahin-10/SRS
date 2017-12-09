@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "PlaceOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid" style=" padding: 5%;">
+    <div class="panel">
+        <div class="panel-heading">
+            <span style="font-size:25px">Cart</span>
+            <div id="count"><b>2</b></div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    Items
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    Quantity
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    Amount
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="menu-details">
+                        <h6><b>Breakfast</b></h6>
+                        <h4>Breakfast Pack 2</h4>
+                        <p>Fruits, Egg, Sausage, Pan Cake </p> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="count-input space-bottom">
+                        <a id="dec-btn" class="incr-btn" data-action="decrease" href="#">–</a>
+                        <input class="quantity" type="text" name="quantity" value="1"/>
+                        <a id="inc-btn" class="incr-btn" data-action="increase" href="#">&plus;</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class='amount'>
+                        <b> 200 TK</b>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="menu-details">
+                        <h6><b>Breakfast</b></h6>
+                        <h4>Breakfast Pack 1</h4>
+                        <p>Fruits, Egg, Sausage, Pan Cake </p> 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class="count-input space-bottom">
+                        <a id="dec-btn" class="incr-btn" data-action="decrease" href="#">–</a>
+                        <input class="quantity" type="text" name="quantity" value="1"/>
+                        <a id="inc-btn" class="incr-btn" data-action="increase" href="#">&plus;</a>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-3 col-md-3 text-center">
+                    <div class='amount'>
+                        <b> 150 TK</b>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6" style="padding:0 30px 0 30px;">
+                    <h5>TOTAL AMOUNT</h5>
+                </div>
+                <div class="col-lg-6  col-md-6">
+                    <h5 id="totalAmount"> 350 TK</h5>
+                    
+                </div>
+              </div>
+
+
+            </div>
+        <div class="panel-footer" style="padding:0 30px 30px 30px;">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    
+                   <button type="button" id="addFood">Add More Foods</button>
+                            </div>
+                <div class="col-lg-4  col-md-4  text-center">
+                    
+                         <button type="button" id="cart-cancel"><a>Cancel Cart</a></button>
+                </div>
+            
+                            <div class="col-lg-4 col-md-4 ">
+                           
+                        <button type="button" id="pay"><a>Pay</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

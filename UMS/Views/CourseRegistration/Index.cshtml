@@ -1,0 +1,63 @@
+﻿@using UMS.Entity
+
+@{
+    IEnumerable<SelectListItem> studentSelectList = (IEnumerable<SelectListItem>)ViewBag.studentSelectList;
+    IEnumerable<Course> registeredCourses = (IEnumerable<Course>)ViewBag.registeredCourses;
+    IEnumerable<Course> unregisteredCourses = (IEnumerable<Course>)ViewBag.unregisteredCourses;
+}
+
+@{
+    ViewBag.Title = "Course Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <span>Select Student</span>
+    @Html.DropDownList("selectedStudentId", studentSelectList)
+    <button>Submit</button>
+}
+
+<br />
+
+<fieldset>
+    <legend>Registered Courses</legend>
+    @if (registeredCourses != null)
+    {
+        if (registeredCourses.Count() == 0)
+        {
+            <span>No Course Found</span>
+        }
+
+        foreach (var course in registeredCourses)
+        {
+            <div style="background: #cdfbe3; margin: 10px 0; padding: 10px">
+                @Html.ActionLink("Remove", "Remove", new { studentId = studentSelectList.SingleOrDefault(s => s.Selected).Value, courseId = course.Id })
+                @Html.DisplayFor(modelItem => course.Name)
+                <span>[Credit: @Html.DisplayFor(modelItem => course.Credit)]</span>
+            </div>
+        }
+    }
+</fieldset>
+
+<br />
+
+<fieldset>
+    <legend>Offered Courses</legend>
+    @if (unregisteredCourses != null)
+    {
+        if (unregisteredCourses.Count() == 0)
+        {
+            <span>No Course Found </span>
+        }
+
+        foreach (var course in unregisteredCourses)
+        {
+            <div style="background: #fbf1d6; margin: 10px 0; padding: 10px">
+                @Html.ActionLink("Add", "Add", new { studentId = studentSelectList.SingleOrDefault(s => s.Selected).Value, courseId = course.Id })
+                @Html.DisplayFor(modelItem => course.Name)
+                <span>[Credit: @Html.DisplayFor(modelItem => course.Credit)]</span>
+            </div>
+        }
+    }
+</fieldset>

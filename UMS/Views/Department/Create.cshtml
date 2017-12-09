@@ -1,0 +1,22 @@
+﻿@model UMS.Entity.Department
+
+@{
+    ViewBag.Title = "Department | Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Back to List", "Index")
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    <fieldset>
+        <legend>Department</legend>
+        @Html.LabelFor(model => model.Name)<br/>
+        @Html.EditorFor(model => model.Name)
+        <hr />
+        <input type="submit" value="Create" />
+    </fieldset>
+}
+<br/>
+@ViewBag.Message

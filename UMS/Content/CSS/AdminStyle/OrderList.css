@@ -1,0 +1,13 @@
+﻿div.orderList{
+    box-shadow: 1px 3px 12px 5px rgba(136, 136, 136, 0.6);
+    background-color:white;
+    border-radius:1%;
+    width: 72%;
+    position: fixed;
+    top: 5%;
+    padding: 1%;
+}
+hr {
+    background-color: white;
+    color:white;
+}

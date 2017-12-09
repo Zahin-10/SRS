@@ -1,0 +1,119 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+   
+    @Styles.Render("~/Content/bootstrap-lumen.css")
+    @Styles.Render("~/Content/CSS/MainStyle.css")
+    @Styles.Render("~/Content/CSS/Menu.css")
+    @Scripts.Render("~/Scripts/modernizr-2.6.2.js")
+
+
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Smart Restaurant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*            <li>@Html.ActionLink("Menus", "MenuView", "Menu")</li>*@
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("PLACE ORDER", "PlaceOrder", "Cart")</li>
+                <li>
+                    @*                @Html.ActionLink("SIGN IN", "Login", "Account")*@
+                    <button type="button" data-toggle="modal" data-target="#sign_in_Modal" class="btn btn-warning btn-pos">SIGN IN</button>
+                </li>
+                <li>
+                    <button type="button" data-toggle="modal" data-target="#sign_up_Modal" class="btn btn-warning btn-pos">SIGN UP</button>
+                    @*                @Html.ActionLink("SIGN UP", "Registration", "Account")*@
+                </li>
+                <li><a>Log off</a></li>
+            </ul>
+            @*        @Html.Partial("_LoginPartial")*@
+        </div>
+    </div>
+
+
+    <div class="body-content">
+        @RenderBody()
+        <div id="sign_up_Modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Sign Up</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" id="signup_form">
+                            <label>Phone No.</label>
+                            <input type="text" name="phoneno" id="phoneno" class="form-control" />
+                            <br />
+                            <label>Password</label>
+                            <input type="password" name="password" id="password" class="form-control" />
+                            <br />
+                            <input type="submit" name="signup" id="signup" value="SIGN UP" class="btn btn-success" />
+                        </form>
+                    </div>
+                    <div id="member">
+                        Already a member? &nbsp <a href="#sign_in_Modal" data-toggle="modal" data-dismiss="modal"><b>SIGN IN</b></a>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+
+        <div id="sign_in_Modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">SIGN IN</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" id="signin_form">
+                            <label>Phone No.</label>
+                            <input type="text" name="phoneno" id="phoneno" class="form-control" />
+                            <br />
+                            <label>Password</label>
+                            <input type="password" name="password" id="password" class="form-control" />
+                            <br />
+                            <input type="submit" name="signup" id="signup" value="SIGN IN" class="btn btn-success" />
+                        </form>
+                    </div>
+                    <div id="member">
+                        Not a member? <a href="#sign_up_Modal" data-toggle="modal" data-dismiss="modal"><b>SIGN UP</b></a>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Smart Restaurant System</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/Scripts/jquery-1.12.4.js")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/bootstrap.js")
+    @Scripts.Render("~/Scripts/MainJS.js")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

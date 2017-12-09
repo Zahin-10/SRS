@@ -1,0 +1,71 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Vidly</title>
+    <link href="https://fonts.googleapis.com/css?family=Kristi|Poiret+One|Nova+Mono" rel="stylesheet">
+    @Styles.Render("~/Content/bootstrap.css")
+    @Styles.Render("~/Content/CSS/AdminStyle/MainStyle.css")
+    @Styles.Render("~/Content/CSS/AdminStyle/OrderList.css")
+    @Styles.Render("~/Content/CSS/AdminStyle/MenuList.css")
+    @Styles.Render("~/Content/CSS/AdminStyle/CategoryList.css")
+    @Styles.Render("~/Content/CSS/AdminStyle/EmployeeList.css")
+   
+
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 admin_left">
+                <div class="left-content">
+                    <div class="text-center" style="padding:3%;">
+                        <img style="margin:10px" width="25%" src="http://www.vurtur.com/images/photo.jpg" align="middle">
+
+                        <hr width="65%">
+                        <h3 class="text-center">Bob Marshal</h3>
+                        <hr width="65%">
+                        <h6>Admin</h6>
+                        <hr width="100%">
+                        <a href="@Url.Action("OrderList", "Admin")" title="Order List">
+                            <img src="https://seotask.in/wp-content/uploads/2017/10/update-seo-tasks-checklist-768x768.png">
+                        </a>
+                        <br /><br />
+                        <a href="@Url.Action("MenuList", "Admin")" title="Menus">
+                            <img src="https://s.cafebazaar.ir/1/upload/icons/ir.mayapps.foodtricksi.png">
+                        </a>
+                        <br /><br />
+                        <a href="@Url.Action("CategoryList", "Admin")" title="Category">
+                            <img src="https://www.shareicon.net/download/2017/02/07/878508_fork_512x512.png">
+                        </a>
+                        <br /><br />
+                        <a href="@Url.Action("EmployeeList", "Admin")" title="Employees">
+                            <img src="http://download.seaicons.com/icons/webalys/kameleon.pics/512/Chef-2-icon.png">
+                        </a>
+                        <br /><br />
+                        <a href="@Url.Action("ComboPackList", "Admin")" title="Combo Pack">
+                            <img src="http://icons.iconarchive.com/icons/graphicloads/food-drink/256/catering-icon.png">
+                        </a>
+                        <br /><br />
+                        <a href="@Url.Action("Discount", "Admin")" title="Discount">
+                            <img src="https://www.erstegroup.com/content/sites/at/eh/www_erstegroup_com/en/karriere/benefits/jcr:content/mainParsys/sectionwithheadline/items/columns/container-1/textwithimage_3/image.fitIn.w950.png/14621806285131448141629232.png">
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            @RenderBody()
+
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/bootstrap.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

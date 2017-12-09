@@ -1,0 +1,27 @@
+﻿@model UMS.Entity.Department
+
+@{
+    ViewBag.Title = "Department | Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Back to List", "Index")
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Department</legend>
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.LabelFor(model => model.Name)<br />
+        @Html.EditorFor(model => model.Name)
+        <hr />
+        <input type="submit" value="Save" />
+    </fieldset>
+}
+<br />
+@ViewBag.Message

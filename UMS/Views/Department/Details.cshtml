@@ -1,0 +1,17 @@
+﻿@model UMS.Entity.Department
+
+@{
+    ViewBag.Title = "Department | Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+@Html.ActionLink("Back to List", "Index")
+<br />
+<br />
+<fieldset>
+    <legend>Department</legend>
+    @Html.DisplayNameFor(model => model.Name)
+    @Html.Raw(":")
+    @Html.DisplayFor(model => model.Name)
+</fieldset>

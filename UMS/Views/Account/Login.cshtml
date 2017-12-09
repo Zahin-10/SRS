@@ -1,0 +1,27 @@
+﻿@model UMS.Models.LoginModel
+
+@{
+    ViewBag.Title = "Account | Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    <fieldset>
+        <legend>Login</legend>
+        @Html.LabelFor(model => model.UserName)<br />
+        @Html.EditorFor(model => model.UserName)
+        <br />
+        @Html.LabelFor(model => model.Password)<br />
+        @Html.EditorFor(model => model.Password)
+        <br />
+        @Html.EditorFor(model => model.Remember)
+        @Html.LabelFor(model => model.Remember)
+        <hr />
+        <input type="submit" value="Login" />
+    </fieldset>
+}
+<br />
+@ViewBag.Message

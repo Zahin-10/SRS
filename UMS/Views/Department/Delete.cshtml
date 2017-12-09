@@ -1,0 +1,25 @@
+﻿@model UMS.Entity.Department
+
+@{
+    ViewBag.Title = "Department | Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Back to List", "Index")
+<br />
+<br />
+<fieldset>
+    <legend>Student</legend>
+    @Html.DisplayNameFor(model => model.Name)
+    @Html.Raw(":")
+    @Html.DisplayFor(model => model.Name)
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h3>Are you sure you want to delete this?</h3>
+        <input type="submit" value="Delete" />
+    }
+</fieldset>
+<br />
+@ViewBag.Message
