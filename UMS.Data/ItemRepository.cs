@@ -26,7 +26,11 @@ namespace UMS.Data
              return base.context.Item.Include(s => s.Promotion).ToList();
         }
 
-        
+        public IEnumerable<Item> GetAllWithPromoByCatId(int id)
+        {
+            return base.context.Item.Include(s => s.Promotion).Where(s=>s.category == id).ToList();
+        }
+
 
         public bool RemovePromo(Item item)
         {

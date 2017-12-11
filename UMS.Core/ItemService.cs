@@ -17,6 +17,10 @@ namespace UMS.Core
         {
             return ((IItemRepository)base.repository).GetAllWithPromo();
         }
+        public IEnumerable<Item> GetAllWithPromoByCatId(int id)
+        {
+            return ((IItemRepository)base.repository).GetAllWithPromoByCatId(id);
+        }
 
         public bool RemovePromo(Item item)
         {

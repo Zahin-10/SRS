@@ -10,13 +10,11 @@ namespace UMS.Controllers
 {
     public class HomeController : Controller
     {
-        private IItemService service;
         private ICategoryService categoryservice;
 
-        public HomeController(ICategoryService categoryservice, IItemService itemService)
+        public HomeController(ICategoryService categoryservice)
         {
             this.categoryservice = categoryservice;
-            this.service = itemService;
 
         }
 

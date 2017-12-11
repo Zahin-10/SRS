@@ -8,6 +8,7 @@ namespace UMS.Core.Interfaces
     {
         bool Delete(int id);
         IEnumerable<Item> GetAllWithPromo();
+        IEnumerable<Item> GetAllWithPromoByCatId(int id);
         bool RemovePromo(Item item);
         bool AddPromo(Item item, int promoId);
         
