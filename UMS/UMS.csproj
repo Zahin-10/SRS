@@ -214,6 +214,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSS\AdminStyle\CategoryList.css" />
+    <Content Include="Content\CSS\AdminStyle\editDelete.css" />
     <Content Include="Content\CSS\AdminStyle\MainStyle.css" />
     <Content Include="Content\CSS\AdminStyle\MenuList.css" />
     <Content Include="Content\CSS\AdminStyle\OrderList.css" />
@@ -300,6 +301,12 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Views\Admin\CategoryList.cshtml" />
+    <Content Include="Views\Admin\ComboPackList.cshtml" />
+    <Content Include="Views\Admin\Discount.cshtml" />
+    <Content Include="Views\Admin\EmployeeList.cshtml" />
+    <Content Include="Views\Admin\MenuList.cshtml" />
+    <Content Include="Views\Admin\OrderList.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Web.config">
@@ -363,12 +370,6 @@
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <Content Include="Views\Shared\_adminLayout.cshtml" />
-    <Content Include="Views\Admin\CategoryList.cshtml" />
-    <Content Include="Views\Admin\ComboPackList.cshtml" />
-    <Content Include="Views\Admin\Discount.cshtml" />
-    <Content Include="Views\Admin\EmployeeList.cshtml" />
-    <Content Include="Views\Admin\MenuList.cshtml" />
-    <Content Include="Views\Admin\OrderList.cshtml" />
     <Content Include="Views\Menu\MenuView.cshtml" />
     <Content Include="Views\Cart\PlaceOrder.cshtml" />
     <None Include="Web.Debug.config">

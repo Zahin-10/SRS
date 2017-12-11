@@ -41,17 +41,19 @@
 </div>
 <div class="col-md-9">
 <div class="view-food text-center">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 <h3>Employee List</h3>
+    
 <hr>
-<table width="100%" cellpadding="10">
+<table width="100%" cellpadding="10" id="myTable">
     <tr>
-        <td>Image</td>
-        <td>Name </td>
-        <td>Job</td>
-        <td>Phone</td>
-        <td>Address</td>
-        <td>Edit</td>
-        <td>Delete</td>
+        <th>Image</th>
+        <th>Name </th>
+        <th>Job</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <tr>
         <td><img src="http://www.vurtur.com/images/photo.jpg" width="70"></td>
@@ -141,7 +143,7 @@
     <tr>
         <td><img src="http://www.vurtur.com/images/photo.jpg" width="70"></td>
         <td>Bob Marshal </td>
-        <td>Admin</td>
+        <td>Chef</td>
         <td>01680000006</td>
         <td>Uttara, Dhaka</td>                
         <td>
@@ -157,8 +159,8 @@
     </tr>
     <tr>
         <td><img src="http://www.vurtur.com/images/photo.jpg" width="70"></td>
-        <td>Bob Marshal </td>
-        <td>Admin</td>
+        <td> John de </td>
+        <td>Staff</td>
         <td>01680000006</td>
         <td>Uttara, Dhaka</td>                
         <td>
@@ -247,4 +249,23 @@
 </div>
 
 </div>
-
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>

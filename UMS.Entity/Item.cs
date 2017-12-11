@@ -7,8 +7,8 @@ namespace UMS.Entity
     {
         public int Id { get; set; }
         public string name { get; set; }
-        public int category { get; set; }
-        [ForeignKey("category")]
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
         public decimal? price { get; set; }
         public int? PromoId { get; set; }

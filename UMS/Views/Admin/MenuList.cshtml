@@ -1,22 +1,35 @@
-﻿
+﻿@model IEnumerable<UMS.Entity.Item>
+@using UMS.Entity
+
+@{
+    IEnumerable<Category> categoryList = (IEnumerable<Category>) ViewBag.categoryList;
+}
 @{
     ViewBag.Title = "MenuList";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
 <div class="col-md-9 admin_right" style="padding-bottom: 1.2%;">
 <div class=row>
 <div class="col-md-3">
     <div class="add-food">
         <h3 class="text-center">Add Food</h3>
-        <form> 
+        <form method="post"> 
             Food Name:
             <br>
-            <input type="text">
+            <input type="text" name='foodname'>
             <br>
             <br> Category:
             <br>
-            <input type="text">
+            <select class="selectpicker" data-live-search="true" name='category'>
+    <option disabled="disabled" selected="selected">Select.....</option>
+            @foreach (var category in categoryList)
+            {
+                <option value="@Html.DisplayFor(modelItem => category.Id)">@Html.DisplayFor(modelItem => category.name)</option>
+            }
+                
+
+            </select>
             <br>
             <br> Food Details:
             <br>
@@ -24,11 +37,7 @@
             <br>
             <br> Price:
             <br>
-            <input type="text">
-            <br>
-            <br> Discount:
-            <br>
-            <input type="text">
+            <input type="text" name='Price'>
             <br>
             <br>
             Image:
@@ -45,497 +54,37 @@
 <h3>Food List</h3>
 <hr>
 <table width="100%" cellpadding="10">
-<tr>
-    <td>Image</td>
-    <td>Food Name </td>
-    <td>Category</td>
-    <td>Food Details</td>
-    <td>Price</td>
-    <td>Discount</td>
-    <td>Edit</td>
-    <td>Delete</td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-<tr>
-    <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
-    <td>Jambo Burger </td>
-    <td>Burger</td>
-    <td>Food Details</td>
-    <td>350</td>
-    <td>10%</td>
-    <td>
-        <form>
-            <input type="submit" value="Edit">
-        </form>
-    </td>
-    <td><form>
-        <input type="submit" value="Delete">
-    </form></td>
-</tr>
-              
+    <tr>
+        <td>Image</td>
+        <td>Food Name </td>
+        <td>Category</td>
+        <td>Food Details</td>
+        <td>Price</td>
+        <td>Discount</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="http://www.mcdonaldsindia.net/images/large/maharaja-mac-nonveg.png" width="70"></td>
+            <td>@Html.DisplayFor(modelItem => item.name) </td>
+            <td>@Html.DisplayFor(modelItem => item.Category.name)</td>
+            <td>Food Details</td>
+            <td>@Html.DisplayFor(modelItem => item.price)</td>
+            <td>@Html.DisplayFor(modelItem => item.Promotion.discountRate)</td>
+            <td>
+                <form>
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
+            <td>
+                <form>
+                    <input type="submit" value="Delete">
+                </form></td>
+        </tr>
+    }
+
                
               
               
@@ -549,3 +98,6 @@
       
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>

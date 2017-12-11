@@ -3,6 +3,78 @@
     ViewBag.Title = "Discount";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+<div class="col-md-9 admin_right">
+    <h3 class="text-center">Discount</h3>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-lg-6">
+                
+                <div class="add-food text-left">
+                    <h3 class="text-center">Add Discount</h3>
+                    <form>
+                        <input onclick="pickOnlyOne('discountType1', 'discountType2')" type="radio" name="discount" value="rate" checked="checked">
+                        Discount Rate
+                        <input type="text" id="discountType1" name="" value="" />%
+                        <br>
+                        <br>
+                        <input onclick="pickOnlyOne('discountType2', 'discountType1')" type="radio" name="discount" value="amount">
+                        Discount Amount
+                        <input type="text" id="discountType2" name="" value="" disabled="disabled" />
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 
-<h2>Discount</h2>
+                        <input onclick="pickOnlyOne('pickType1', 'pickType2')" type="radio" name="chooseFood" value="rate" checked="checked">
+                        Pick a item:
+                        <br>
+                        <select class="selectpicker" data-live-search="true" id="pickType1">
+                            <option disabled="disabled" selected="selected">Select.....</option>
+                            <option>Burger</option>
+                            <option>Breakfast</option>
+                            <option>Lunch</option>
+                            <option>Dinner</option>
+                            <option>Appetizer</option>
 
+                        </select>
+                        <br/>
+                        <input onclick="pickOnlyOne('pickType2', 'pickType1')" type="radio" name="chooseFood" value="amount">
+                        Pick a package:
+                        <br>
+                        <select class="selectpicker" data-live-search="true" id="pickType2">
+                            <option disabled="disabled" selected="selected">Select.....</option>
+                            <option>Burger</option>
+                            <option>Breakfast</option>
+                            <option>Lunch</option>
+                            <option>Dinner</option>
+                            <option>Appetizer</option>
+
+                        </select>
+                        <br>
+                        <br>
+                        <input type="submit">
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+
+    <script>
+        function pickOnlyOne(a, b) {
+            document.getElementById(a).disabled = false;
+            document.getElementById(b).disabled = true;
+        }
+    </script>
