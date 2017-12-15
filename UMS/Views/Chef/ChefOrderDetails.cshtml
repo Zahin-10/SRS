@@ -1,0 +1,66 @@
+﻿@model IEnumerable<UMS.Entity.Orders>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChefOrderDetails</title>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+    <style>
+        body {
+            background-image: url("http://www.myfreephotoshop.com/wp-content/uploads/2015/10/2311.jpg");
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #content {
+            background: white;
+            padding: 5%;
+            position: relative;
+            top: 40%;
+            left: 5%;
+            border-radius: 3%;
+        }
+
+        select.form-control:not([size]):not([multiple]) {
+            height: calc(2.25rem + 10px);
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-3" id=left></div>
+        <div class="col-md-6 text-center">
+            <div id="content">
+                <h2>Order Details</h2>
+                <h4>Order No: order 1</h4>
+                <h4>Food Name: Naga burger</h4>
+                <h4>Food Details: </h4>
+                <h4>Status:Pending</h4>
+
+                <br>
+                <h4>Change status to:</h4>
+                <button class="btn btn-success">Done</button>
+                <button class="btn btn-danger">Pending</button>
+                <br>
+                <br>
+                <a href="" class="btn btn-info">Cook more</a>
+            </div>
+        </div>
+
+        <div class="col-md-3" id="right"></div>
+    </div>
+</body>
+</html>

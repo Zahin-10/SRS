@@ -1,3 +1,7 @@
+label {
+    text-align: left !important;
+
+}
 button.btn.btn-warning {
   color: #e9342b;
   background-color: rgba(240, 173, 78, 0);

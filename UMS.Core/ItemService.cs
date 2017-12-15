@@ -17,6 +17,10 @@ namespace UMS.Core
         {
             return ((IItemRepository)base.repository).GetAllWithPromo();
         }
+        public Item GetAllWithPromoById(int id)
+        {
+            return ((IItemRepository) base.repository).GetAllWithPromoById(id);
+        }
         public IEnumerable<Item> GetAllWithPromoByCatId(int id)
         {
             return ((IItemRepository)base.repository).GetAllWithPromoByCatId(id);

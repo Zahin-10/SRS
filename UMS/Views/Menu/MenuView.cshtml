@@ -1,4 +1,5 @@
-﻿@model IEnumerable<UMS.Entity.Item>
+﻿@*@using System.Web.Optimization
+@model IEnumerable<UMS.Entity.Item>
 @{
     ViewBag.Title = "Menu";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,10 +10,10 @@
         <div class="col-lg-12 text-center">
 
             <span id="greetings"> Let's Have Some Breakfast</span>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     </div>
     <div class="row row-padding">
@@ -34,13 +35,104 @@
                                 <b>@Html.DisplayFor(modelItem => item.price)</b>
                             </div>
                             <div class='col-lg-6 col-md-6 text-right'>
-                                <input type="submit" value="+ ADD" class="addFood"/>
+                                <input type="submit" class="addtocart" value="+ ADD" class="addFood" onclick="addtocart('@Html.DisplayFor(modelItem => item.Id)' , '@Html.DisplayFor(modelItem => item.name)' ,'@Html.DisplayFor(modelItem => item.price)' )"/>
+                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         }
+
+    </div>
+</div>*@
+
+
+@model IEnumerable<UMS.Entity.Item>
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid" style=" padding-left: 5%; padding-right: 5%;">
+    <div class="row row-padding">
+        <div class="col-lg-12 text-center">
+            <br />
+            <br />
+            <br />
+            <span id="greetings"> Let's Have Some Food</span>
+
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="row row-padding">
+        @foreach (var item in Model)
+        {
+            <div class='col-lg-3 col-md-6 pad-btm'>
+                <div class="content">
+                    <div class="tile">
+                        <a href="#">
+                            <img class='img-responsive' src="https://cdad5c1a4432622c031d-9e2498b30009308de15a0d52a7422974.ssl.cf1.rackcdn.com/menu/product/strawberries-cream-pancake-breakfast_thumbnaillarge_2017-04-06-17-58-09.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="menu-details">
+                        <h5><b>@Html.DisplayFor(modelItem => item.Category.name)</b></h5>
+                        <h3>@Html.DisplayFor(modelItem => item.name)</h3>
+                        <p>Fruits, Egg, Sausage, Pan Cake </p>
+
+                        @{
+                            if (item.Promotion.discountAmount != 0)
+                            {
+                                <h4>Discount: @Html.DisplayFor(modelItem => item.Promotion.discountAmount)</h4>
+                                var newPrice = item.price - (decimal)item.Promotion.discountRate;
+
+
+                                <div class="row">
+                                    <div class='col-lg-6 col-md-6 text-left'>
+                                        <b><strong>Prcie: </strong>@Html.DisplayFor(modelItem => item.price)-@Html.DisplayFor(modelItem => item.Promotion.discountRate)% = @newPrice TK</b>
+                                    </div>
+                                    <div class='col-lg-6 col-md-6 text-right'>
+                                        <input type="submit" value="+ ADD" class="addFood" />
+                                    </div>
+                                </div>
+                            }
+
+                            else if (item.Promotion.discountRate != 0)
+                            {
+                                <h4>Discount: @Html.DisplayFor(modelItem => item.Promotion.discountRate)%</h4>
+
+                                var newPrice = item.price - ((item.price * (decimal)item.Promotion.discountRate) / 100);
+
+                                <div class="row">
+                                    <div class='col-lg-6 col-md-6 text-left' style="padding-right: 0px;">
+                                        <b><strong>Prcie: </strong>@Html.DisplayFor(modelItem => item.price)-@Html.DisplayFor(modelItem => item.Promotion.discountRate)% = @newPrice TK</b>
+                                    </div>
+                                    <div class='col-lg-6 col-md-6 text-right'>
+                                        <input type="submit" class="addtocart addFood" value="+ ADD"  onclick="addtocart('@Html.DisplayFor(modelItem => item.Id)' , '@Html.DisplayFor(modelItem => item.name)' ,'@Html.DisplayFor(modelItem => @newPrice)' )" />
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="row">
+                                    <div class='col-lg-6 col-md-6 text-left'>
+                                        <b><strong>Prcie: </strong>@Html.DisplayFor(modelItem => item.price)TK</b>
+                                    </div>
+                                    <div class='col-lg-6 col-md-6 text-right'>
+                                        <input type="submit" value="+ ADD" class="addFood" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+
+
+                    </div>
+                </div>
+            </div>
+                            }
 
     </div>
 </div>

@@ -43,11 +43,11 @@ namespace UMS
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-
-            container.RegisterType<IDepartmentService, DepartmentService>();
+            
             container.RegisterType<IItemService, ItemService>();
             container.RegisterType<ICategoryService, CategoryService>();
-            container.RegisterType<ICourseService, CourseService>();
+
+            container.RegisterType<IOrdersService, OrdersService>();
         }
     }
 }

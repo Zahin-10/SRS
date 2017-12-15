@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmpDetails</title>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+    <style>
+        body {
+            background-image: url("http://www.myfreephotoshop.com/wp-content/uploads/2015/10/2311.jpg");
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #content {
+            background: white;
+            padding: 5%;
+            position: relative;
+            top: 100%;
+            left: 10%;
+            border-radius: 3%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-3" id=left></div>
+        <div class="col-md-6 text-center">
+            <div id="content">
+                <h2>Welcome, Bob Marshal</h2>
+                <h4>Phone No: 01681231231</h4>
+                <h4>User Type: Admin</h4>
+                <h4>Address: uttara</h4>
+                <a href="/Employee/EmpDetailsEdit" class="btn btn-success">Edit</a>
+                <a href="~/Views/Admin/OrderList.cshtml" class="btn btn-info">Goto Admin</a>
+            </div>
+        </div>
+
+        <div class="col-md-3" id="right"></div>
+    </div>
+</body>
+</html>

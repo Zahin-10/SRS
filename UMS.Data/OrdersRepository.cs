@@ -23,7 +23,21 @@ namespace UMS.Data
         {
             return base.context.Orders.Include(s => s.invoiceid).Where(s => s.invoiceid == id).ToList();
         }
+        public int CreateInvoice(int status, int totalPrice)
+        {
+            Invoice newinvoice = new Invoice();
+            newinvoice.status = 1;
+            newinvoice.totalPrice = totalPrice;
+            newinvoice.uid = "1";
+            newinvoice.promoId = null;
+            base.context.Entry(newinvoice).State = EntityState.Added;
 
+            base.context.SaveChanges();
+            int id = newinvoice.Id;
+            return id;
+        }
+
+        
 
 
 

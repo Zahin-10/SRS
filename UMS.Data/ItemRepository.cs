@@ -25,6 +25,10 @@ namespace UMS.Data
         {
              return base.context.Item.Include(s => s.Promotion).Include(s => s.Category).ToList();
         }
+        public Item GetAllWithPromoById(int id)
+        {
+            return base.context.Item.Include(s => s.Promotion).Include(s => s.Category).SingleOrDefault(s => s.Id == id);
+        }
 
         public IEnumerable<Item> GetAllWithPromoByCatId(int id)
         {

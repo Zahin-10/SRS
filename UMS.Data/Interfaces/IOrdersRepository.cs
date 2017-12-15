@@ -11,7 +11,7 @@ namespace UMS.Data.Interfaces
         bool Delete(int id);
 
         IEnumerable<Orders> GetWithInvoice(int id);
-
+        int CreateInvoice(int status, int totalPrice);
 
 
 

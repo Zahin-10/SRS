@@ -1,0 +1,65 @@
+﻿@model IEnumerable<UMS.Entity.Orders>
+
+@{
+    ViewBag.Title = "OrderDetail";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<style>
+    .table {
+        width: 100%;
+        margin-bottom: 20px;
+        position: absolute;
+        left: 36%;
+    }
+</style>
+<h2>OrderDetail</h2>
+
+
+<div class="col-md-9 admin_right">
+    
+    <table class="table">
+        <h2 style="Padding-left:70%">Order Details</h2>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.invoiceid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemType)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.invoiceid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.itemid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.itemQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.totalPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.itemType)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+</div>

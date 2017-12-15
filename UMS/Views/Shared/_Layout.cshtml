@@ -10,9 +10,12 @@
     @Styles.Render("~/Content/CSS/MainStyle.css")
     @Styles.Render("~/Content/CSS/Menu.css")
     @Scripts.Render("~/Scripts/modernizr-2.6.2.js")
+    @Scripts.Render("~/Scripts/jquery-1.12.4.js")
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
-
-
+    <script>
+        var cartitems = [];
+    </script>
 
 </head>
 <body>
@@ -109,11 +112,31 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/Scripts/jquery-1.12.4.js")
+
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/bootstrap.js")
     @Scripts.Render("~/Scripts/MainJS.js")
+    @Scripts.Render("~/Scripts/addtocart.js")
 
     @RenderSection("scripts", required: false)
+<script>
+
+    $('document').ready(function() {
+        $('#pay').click(function() {
+            string mycart = Cookies.get('cart');
+            console.log("entered pay");
+            $.ajax({
+                url: "/Cart/PlaceOrder",
+                type: "POST",
+                data: {mycart:mycart},
+                success: function(data) {
+                    console.log(data);
+                }
+        
+            });
+        });
+    });
+   
+</script>
 </body>
 </html>

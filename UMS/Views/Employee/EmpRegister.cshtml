@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmpRegister</title>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+    <style>
+        body {
+            background-image: url("http://www.myfreephotoshop.com/wp-content/uploads/2015/10/2311.jpg");
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #content {
+            background: white;
+            padding: 5%;
+            position: relative;
+            top: 40%;
+            left: 25%;
+            border-radius: 3%;
+            width: 50%;
+        }
+
+        select.form-control:not([size]):not([multiple]) {
+            height: calc(2.25rem + 10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-3" id=left></div>
+        <div class="col-md-6 text-center">
+            <div id="content">
+                <h2>Employee Register</h2>
+                <form action="">
+                    <div class="form-group">
+                        <label for="">User Id</label>
+                        <input type="text" class="form-control">
+                        <label for="">User Type</label>
+                        <select name="" id="" class="form-control" placeholder="Password">
+                            <option value="">Select</option>
+                            <option value="Chef">Chef</option>
+                            <option value="Staff">Staff</option>
+                        </select>
+                        <label for="">Password</label>
+                        <input type="password" class="form-control">
+                        <label for="">Address</label>
+                        <input type="text" class="form-control">
+                        <br>
+                        <input type="submit" class="btn btn-success" value="Register">
+
+                        <a href="" class="btn btn-info">Sign In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-3" id="right"></div>
+    </div>
+</body>
+</html>

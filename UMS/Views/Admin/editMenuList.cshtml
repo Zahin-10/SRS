@@ -1,0 +1,54 @@
+﻿@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "editMenuList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<style>
+    div.orderList {
+        position: absolute !important;
+        left: 50% !important;
+    }
+</style>
+@Styles.Render("~/Content/CSS/AdminStyle/editDelete.css")
+@model IEnumerable<UMS.Entity.Item>
+@using UMS.Entity
+@{
+    Item item = (Item)ViewBag.item;
+}
+<h2>Edit Menu List</h2>
+
+<div class="col-md-9 admin_right">
+
+    <div class="orderList text-center">
+        
+        <form method="post">
+            <input type="hidden" name="itemid" value="@Html.DisplayFor(modelItem => item.Id)" />
+            <label>Food Name:</label>
+            <input type="text" class="form-control" name="foodname" value="@Html.DisplayFor(modelItem => item.name)">
+
+            <label>Category:</label>
+            <input type="hidden" name="categoryid" value="@Html.DisplayFor(modelItem => item.CategoryId)"/>
+            <input type="text" class="form-control" name="categoryname" value="@Html.DisplayFor(modelItem => item.Category.name)">
+            <input type="hidden" name="promoid" value="@Html.DisplayFor(modelItem => item.PromoId)"/>
+            <input type="hidden" name="itemtype" value="@Html.DisplayFor(modelItem => item.itemType)" />
+
+
+            <label>Price:</label>
+
+            <input type="text" class="form-control" name="price" value="@Html.DisplayFor(modelItem => item.price)">
+
+
+            <label>Image:</label>
+            <br>
+            <input type="file" class="form-control">
+            <br>
+
+            <input type="submit" name="" id="save" value="Save" class="btn btn-success"/>
+            <a href="/Admin/MenuList"><button type="button" class="btn btn-warning" id="cancel">Cancel</button></a>
+        </form>
+    </div>
+
+</div>
+
+

@@ -269,6 +269,7 @@
     <Content Include="obj\Debug\UMS.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\UMS.dll" />
     <Content Include="obj\Debug\UMS.pdb" />
+    <Content Include="Scripts\addtocart.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="obj\Debug\CoreCompileInputs.cache" />
@@ -321,12 +322,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\CourseRegistrationController.cs" />
-    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\JsonData.cs" />
     <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -372,6 +371,15 @@
     <Content Include="Views\Shared\_adminLayout.cshtml" />
     <Content Include="Views\Menu\MenuView.cshtml" />
     <Content Include="Views\Cart\PlaceOrder.cshtml" />
+    <Content Include="Views\Admin\EditMenuList.cshtml" />
+    <Content Include="Views\Admin\OrderList1.cshtml" />
+    <Content Include="Views\Admin\OrderDetail.cshtml" />
+    <Content Include="Views\Chef\ChefOrderDetails.cshtml" />
+    <Content Include="Views\Chef\ChefOrderList.cshtml" />
+    <Content Include="Views\Employee\EmpDetails.cshtml" />
+    <Content Include="Views\Employee\EmpDetailsEdit.cshtml" />
+    <Content Include="Views\Employee\EmpLogin.cshtml" />
+    <Content Include="Views\Employee\EmpRegister.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,6 +395,10 @@
     <ProjectReference Include="..\UMS.Core\UMS.Core.csproj">
       <Project>{251495a0-f8a4-4354-bfa9-f654c09a8ca8}</Project>
       <Name>UMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Data\UMS.Data.csproj">
+      <Project>{42f3fb7c-f854-4376-abd4-09e5b3940f6a}</Project>
+      <Name>UMS.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\UMS.Entity\UMS.Entity.csproj">
       <Project>{971deed7-704d-4cef-8fc7-18d13ee50881}</Project>
